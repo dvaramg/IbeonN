@@ -1,8 +1,8 @@
 {
   "name": "IbeonN Participation Badge",
   "description": "Participation Badge issued by IbeonN",
-  "image": "https://i.ibb.co/WNrPw2Fm/ibeonn-badge.png",
-  "external_url": "https://gateway.pinata.cloud/ipfs/bafkreieamwqv2uak5sal2kdgnpafkkpwq7ao2ukdxzklrw4x2bwi6evdey",
+  "image": "https://i.ibb.co/7x3R51Vs/ibeonn.png",
+  "external_url": "https://gateway.pinata.cloud/ipfs/bafkreicwmc7a5zjjq6en2gctd5mltmvrte4gay3mpbnkel6xsz4hnopkle",
   "attributes": [
     {
       "trait_type": "Level",

@@ -36,7 +36,7 @@ async function uploadJSONToPinataV3() {
     {
       "name": "IbeonN Participation Badge",
       "description": "Participation Badge issued by IbeonN",
-      "image": "https://i.ibb.co/WNrPw2Fm/ibeonn-badge.png", //이미지 URL
+      "image": "https://i.ibb.co/7x3R51Vs/ibeonn.png", //이미지 URL
       "external_url": `https://gateway.pinata.cloud/ipfs/${cid}`,  // 실제 ZKP+publicSignals가 담긴 JSON 주소
       "attributes": [
         { "trait_type": "Level", "value": "Advanced" },
