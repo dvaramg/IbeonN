@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>홈</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="home.html">IbeonN</a></div>
+    <nav>
+      <span id="userWelcome" style="display: none;"></span>
+      <a href="dashboard.html">활동 대시보드</a>
+      <a href="mypage.html">마이페이지</a>
+      <a href="badges.html">배지</a>
+      
+      <a href="login.html" id="loginLink">로그인</a>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+   </nav>
+   
+  </header>
+
+   <main>
+    <h1>IbeonN 에 오신 것을 환영합니다!</h1>
+
+    <section class="recommended-section">
+    <h2>추천 이벤트</h2>
+    <div class="event-carousel" id="carousel">
+
+      <div class="event-card" onclick="goToDashboardIfLoggedIn()">
+        <h3>고려대학교 소중대 2025</h3>
+        <p>블록체인에 대하여</p>
+      </div>
+
+      <div class="event-card" onclick="goToDashboardIfLoggedIn()">
+        <h3>AI 학술대회</h3>
+        <p>인공지능 최신 기술 세미나</p>
+      </div>
+
+      <div class="event-card" onclick="goToDashboardIfLoggedIn()">
+        <h3>Web3 개발자 밋업</h3>
+        <p>탈중앙 기술을 배우는 개발자 네트워킹</p>
+      </div>
+
+      <div class="event-card" onclick="goToDashboardIfLoggedIn()">
+        <h3>2025년 창업 아이디어 경진대회</h3>
+        <p>AI + 블록체인 융합 프로젝트</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

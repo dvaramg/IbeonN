@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>배지</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="home.html">IbeonN</a></div>
+    <nav>
+      <span id="userWelcome" style="display: none;"></span>
+      <a href="home.html">홈</a>
+      <a href="dashboard.html">활동 대시보드</a>
+      <a href="mypage.html">마이페이지</a>
+      <a href="badges.html">배지</a>
+      
+      <a href="login.html" id="loginLink">로그인</a>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+   </nav>
+  </header>
+
+  <main>
+  <h2>내 NFT 배지</h2>
+  <ul id="recordsList" class="card-container">
+  <p id="countInfo">참여 횟수: 불러오는 중...</p>
+  <button id="connectBtn">지갑 연결 하기</button>
+  <button id="getBadgeBtn">최근 참여 NFT 뱃지 받기</button>
+  <p id="status"> 지갑을 연결해주세요</p>
+
+  <script>
+     window.onload = () => {
+      const contractAddress = "0xd6bfC4A4e6B3151a8b2b2b3BDC294b42CE4C1c57";
+      const abi = [
+        "function mint(string memory tokenURI) public",
+        "function nextTokenId() public view returns (uint256)"
+      ];
+
+      let provider, signer, contract;
+      let currentAddress;
+
+      document.getElementById("connectBtn").onclick = async () => {
+        if (!window.ethereum) {
+          alert("MetaMask not found!");
+          return;
+        }
+
+        provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        const network = await provider.getNetwork();
+
+        if (network.chainId !== 11155111) {
+          alert("❗ 세폴리아 네트워크로 연결해주세요!");
+          return;
+        }
+
+        signer = provider.getSigner();
+        const address = await signer.getAddress();
+        contract = new ethers.Contract(contractAddress, abi, signer);
+
+        document.getElementById("status").textContent = `Connected: ${address}`;
+        
+        currentAddress = address; 
+      };
+
+      document.getElementById("getBadgeBtn").onclick = async () => {
+        try {
+          document.getElementById("status").textContent = "⏳ Uploading & Minting...";
+
+          const response = await fetch("/api/token-uri");
+          const data = await response.json();
+          const tokenURI = data.tokenURI;
+
+          const tx = await contract.mint(tokenURI);
+          await tx.wait();
+
+          const tokenId = (await contract.nextTokenId()).toNumber() - 1;
+          document.getElementById("status").innerHTML = `
+            ✅ Minted!<br>
+            🔗 Token ID: ${tokenId}<br>
+            
+          `;
+          
+        } catch (err) {
+          console.error(err);
+          document.getElementById("status").textContent = "❌ Mint failed.";
+        }
+      };
+    };
+  </script>
+  </main>
+</body>
+</html>

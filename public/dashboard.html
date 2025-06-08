@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset='UTF-8'>
+    <title>활동 대시보드</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+     <div class="logo"><a href="home.html">IbeonN</a></div>
+     <nav>      
+      <span id="userWelcome" style="display: none;"></span>
+      <a href="dashboard.html">활동 대시보드</a>
+      <a href="mypage.html">마이페이지</a>
+      <a href="badges.html">배지</a>
+      
+
+      <a href="login.html" id="loginLink">로그인</a>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+   </nav>
+    
+    </header>
+    <main>
+     <section class="card-container">
+        <div class="card">
+            <h3>고려대학교 소중대 2025</h3>
+            <p>2025.06.09 @ 블록체인연구소</p>
+            <!--<a href="/event1.html"><button>자세히 보기</button></a> -->
+            <button class ="participateBtn"
+              data-id="event1"
+              data-name="고려대학교 소중대 2025"
+              data-location="고려대학교 블록체인연구소">참여하기</button>
+        </div>
+      
+        <div class="card">
+            <h3>AI 학술대회</h3>
+            <p>2025.06.20 @ 고려대 국제관</p>
+            <!--<a href="/event2.html"><button>자세히 보기</button></a> -->
+            <button class ="participateBtn"
+              data-id="event2"
+              data-name="AI 학술대회 2025"
+              data-location="고려대학교 국제관">참여하기</button>
+        </div>
+      
+        <div class="card">
+            <h3>Web3 개발 밋업</h3>
+            <p>2025.07.15 @ 강남구</p>
+            <!--<a href="/event3.html"><button>자세히 보기</button></a> -->
+            <button class ="participateBtn"
+              data-id="event3"
+              data-name="Web3 개발 밋업 2025"
+              data-location="강남구 코워킹 스페이스">참여하기</button>
+        </div>
+
+        <div class="card">
+            <h3>2025년 창업 아이디어 경진대회</h3>
+            <p>2025.05.16 @ 고려대학교 하나스퀘어 B112호</p>
+            <!--<a href="/event4.html"><button>자세히 보기</button></a> -->
+            <button class ="participateBtn"
+              data-id="event4"
+              data-name="2025년 창업 아이디어 경진대회"
+              data-location="고려대학교 하나스퀘어 B112호">참여하기</button>
+        </section>
+      </main>
+</body>
+</html>

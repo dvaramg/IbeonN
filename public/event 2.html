@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="home.html">IbeonN</a></div>
+    <nav>
+      <span id="userWelcome" style="display: none;"></span>
+      <a href="dashboard.html">활동 대시보드</a>
+      <a href="mypage.html">마이페이지</a>
+      <a href="badges.html">배지</a>
+      
+      <a href="login.html" id="loginLink">로그인</a>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+   </nav>
+   
+   </header>
+   
+   <main>
+    <section class="event-detail">
+      <h2>AI 학술대회 2025</h2>
+      <p>날짜: 2025년 6월 20일</p>
+      <p>장소: 고려대학교 국제관</p>
+      <p>설명: 인공지능 최신 기술 세미나 및 워크샵</p>
+      <button onclick="participateInEvent({
+        eventId: 'ai2025',
+        eventName: 'AI 학술대회 2025',
+        location: '고려대학교 국제관'
+      })">이벤트 참가</button>
+    </section>
+  </main>
+</body>
+</html>
