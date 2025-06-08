@@ -112,8 +112,8 @@ NFT minted from this app can be viewed here:
 ---
 
 🙋 Author
-Built by Song / Junson (신준송)
+Developed by Junson/SHEN JUNSONG (신준송)
 📍 Department of Computer Science, Korea University
-🛠️ Web3 Developer Internship Project
+🛠️ As part of a 2025 blockchain lab internship & Web3 DApp demo project.
 🔗 GitHub: https://github.com/dvaramg
 
